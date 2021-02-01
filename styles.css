@@ -1,3 +1,17 @@
-body{
-    background-color: red;
-}
+:root {
+    --purple: #3e0249;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    color: var(--purple);
+    font-family: sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+  }
