@@ -19,10 +19,10 @@ b7 = document.getElementById("7");
 b8 = document.getElementById("8");
 
 
-function selectwinnerBoxes(x,y,z){
-  x.classList.add("board__tile--winner");
-  y.classList.add("board__tile--winner");
-  z.classList.add("board__tile--winner");
+function selectwinnerBoxes(box1,box2,box3){
+  box1.classList.add("board__tile--winner");
+  box2.classList.add("board__tile--winner");
+  box3.classList.add("board__tile--winner");
 }
 
 
