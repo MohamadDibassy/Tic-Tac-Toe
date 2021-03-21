@@ -1,12 +1,12 @@
-const spaces = []; //data derived from state
-const O_TEXT = "0";
-const X_TEXT = "X";
-let currentPlayer = O_TEXT;
-
 const boxes = Array.from(document.getElementsByClassName("box")); //manipulate the DOM
 const playText = document.getElementById("playText"); //manipulate the DOM
 const restartBtn = document.getElementById("restartBtn"); //manipulate the DOM
 const header__turn = document.getElementById("header__turn"); //manipulate the DOM
+
+const spaces = [];
+const O_TEXT = "0";
+const X_TEXT = "X";
+let currentPlayer = O_TEXT;
 
 b0 = document.getElementById("0"); //manipulate the DOM
 b1 = document.getElementById("1"); //manipulate the DOM
@@ -46,9 +46,6 @@ const drawBoard = () => {
   });
 };
 
-restartBtn.addEventListener("click", restart); //manipulate the DOM
-drawBoard(); ////manipulate the DOM
-
 const boxClicked = e => {
   //mutate state of application
   const id = e.target.id;
@@ -64,7 +61,6 @@ const boxClicked = e => {
     currentPlayer = currentPlayer === O_TEXT ? X_TEXT : O_TEXT;
   }
 };
-
 const playerHasWon = () => {
   //mutate state of application
   if (
@@ -119,10 +115,9 @@ const playerHasWon = () => {
   }
 };
 
+//mutate state of application
 const restart = () => {
-  //mutate state of application
   spaces.forEach((space, index) => {
-    console.log("hellp");
     spaces[index] = null;
   });
   boxes.forEach(box => {
@@ -133,4 +128,10 @@ const restart = () => {
   currentPlayer = O_TEXT;
 };
 
-restart(); ////mutate state of application
+restartBtn.addEventListener("click", restart);
+drawBoard();
+
+//const mapStateToProps = (state = state => ({
+  //spaces: state.spaces
+//}));
+//export default connect(mapStateToProps)();
